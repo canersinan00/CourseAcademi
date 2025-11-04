@@ -1,3 +1,4 @@
+using CourseAcademi.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CourseAcademi.Controllers
@@ -8,7 +9,15 @@ namespace CourseAcademi.Controllers
         {
             return View();
         }
+
         public IActionResult Apply()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]//safety attribute
+        public IActionResult Apply([FromForm] Candidate model)
         {
             return View();
         }
